@@ -75,10 +75,11 @@
 
       <section id="basic-slider">
         <div class="container py-400">
-          <h2 class="ff-secondary fs-600 fw-bold mb-300">Basic Slider</h2>
+          <h2 class="ff-secondary fs-600 fw-bold">Basic Slider</h2>
+          <p class="mb-400">A basic slider with navigation.</p>
 
           <div class="slider" data-element="slider">
-            <div class="slider-navigation">
+            <div class="slider-navigation" data-element="slider-navigation">
               <button class="btn btn-slider btn-slider-left">
                 <i class="fa-solid fa-chevron-left"></i>
               </button>
@@ -87,25 +88,27 @@
               </button>
             </div>
 
-            <ul class="slides">
-              <li class="slide">
-                <img src="./images/image 01.jpg" alt="" class="slide-image" />
-              </li>
-              <li class="slide">
-                <img src="./images/image 02.jpg" alt="" class="slide-image" />
-              </li>
-              <li class="slide">
-                <img src="./images/image 03.jpg" alt="" class="slide-image" />
-              </li>
-              <li class="slide">
-                <img src="./images/image 04.jpg" alt="" class="slide-image" />
-              </li>
-              <li class="slide">
-                <img src="./images/image 05.jpg" alt="" class="slide-image" />
-              </li>
-            </ul>
+            <div class="slider-container">
+              <ul class="slides" data-element="slider-slides">
+                <li class="slide">
+                  <img src="./images/image 01.jpg" alt="" class="slide-image" />
+                </li>
+                <li class="slide">
+                  <img src="./images/image 02.jpg" alt="" class="slide-image" />
+                </li>
+                <li class="slide">
+                  <img src="./images/image 03.jpg" alt="" class="slide-image" />
+                </li>
+                <li class="slide">
+                  <img src="./images/image 04.jpg" alt="" class="slide-image" />
+                </li>
+                <li class="slide">
+                  <img src="./images/image 05.jpg" alt="" class="slide-image" />
+                </li>
+              </ul>
+            </div>
 
-            <ul class="slider-dots | mt-200">
+            <ul class="slider-dots | mt-200" data-element="slider-dots">
               <li class="slider-dot">
                 <button class="btn btn-slider-dot btn-slider-dot-active">
                   1

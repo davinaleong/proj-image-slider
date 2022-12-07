@@ -342,10 +342,18 @@ a:where(:hover, :focus, :focus-visible) {
   position: relative;
 }
 
-.slides {
+.slider-container {
+  overflow-x: hidden;
   background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.slides {
+  --slides-translate-x: 0;
+
   list-style: none;
   display: grid;
+  translate: var(--slides-translate-x, 0) 0;
+  transition: translate 0.5s ease-in-out;
 }
 
 .slides:not(:has(:nth-child(3))) {
@@ -355,11 +363,9 @@ a:where(:hover, :focus, :focus-visible) {
 .slides:has(:nth-child(3)) {
   grid-auto-flow: column;
   grid-auto-columns: 100%;
-  /* overflow-x: scroll; */
 }
 
 .slide {
-  width: 100%;
   display: grid;
   place-items: center;
   outline: thin solid red;
