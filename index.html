@@ -29,11 +29,11 @@
     ></script>
     <script defer type="module" src="./scripts/main.js"></script>
   </head>
-  <body id="top" class="text-neutral-50 bg-neutral-900">
+  <body id="top" class="body-fixed-header text-neutral-50 bg-neutral-900">
     <main>
       <header class="main-header | py-400 bg-neutral-800">
         <div class="container">
-          <h1 class="ff-secondary fs-600 fw-bold ta-center pb-300">
+          <h1 class="ff-secondary fs-600 fw-bold ta-center mb-300">
             Image Sliders with Various Options
           </h1>
 
@@ -43,18 +43,77 @@
                 <a href="#top" class="btn btn-link">Top</a>
               </li>
               <li class="nav-list__item">
-                <a href="#" class="btn btn-link">Option 1</a>
+                <a href="#basic-slider" class="btn btn-link">Basic Slider</a>
               </li>
               <li class="nav-list__item">
-                <a href="#" class="btn btn-link">Option 2</a>
+                <a href="#numeric-navigation" class="btn btn-link"
+                  >Numeric Navigation</a
+                >
               </li>
               <li class="nav-list__item">
-                <a href="#" class="btn btn-link">Option 2</a>
+                <a href="#alt-navigation-position" class="btn btn-link"
+                  >Alt Navigation Position</a
+                >
+              </li>
+              <li class="nav-list__item">
+                <a href="#expanded-images" class="btn btn-link"
+                  >Expanded Images</a
+                >
+              </li>
+              <li class="nav-list__item">
+                <a href="#with-text" class="btn btn-link">With Text</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#with-text-and-overlay" class="btn btn-link"
+                  >With Text &amp; Overlay</a
+                >
               </li>
             </ul>
           </nav>
         </div>
       </header>
+
+      <section id="basic-slider">
+        <div class="container py-400">
+          <h2 class="ff-secondary fs-600 fw-bold mb-300">Basic Slider</h2>
+
+          <div class="slider" data-element="slider">
+            <ul class="slides">
+              <li class="slide">
+                <img src="./images/image 01.jpg" alt="" class="slide-image" />
+              </li>
+              <li class="slide">
+                <img src="./images/image 02.jpg" alt="" class="slide-image" />
+              </li>
+              <li class="slide">
+                <img src="./images/image 03.jpg" alt="" class="slide-image" />
+              </li>
+              <li class="slide">
+                <img src="./images/image 04.jpg" alt="" class="slide-image" />
+              </li>
+              <li class="slide">
+                <img src="./images/image 05.jpg" alt="" class="slide-image" />
+              </li>
+            </ul>
+
+            <div class="slider-navigation">
+              <button class="btn btn-slider btn-slider-left">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="btn btn-slider btn-slider-right">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+            </div>
+
+            <ul class="slider-dots">
+              <li class="slider-dot slider-dot-active"></li>
+              <li class="slider-dot"></li>
+              <li class="slider-dot"></li>
+              <li class="slider-dot"></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <footer class="main-footer | bg-neutral-800">
         <div class="container | py-400">

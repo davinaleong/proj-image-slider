@@ -3,6 +3,7 @@
     - Content
       - Content - General Styling
       - Content - Layout
+      - Content - Sliders
     - Utility
       - Utility - Colours
       - Utility - Background Colours
@@ -75,7 +76,7 @@
 
   --transition: all 0.3s ease-in-out;
 
-  --primary-header-height: 8.5em;
+  --primary-header-height: 6.625em;
   --max-content-width: 50em;
 }
 /** Root - End **/
@@ -99,6 +100,10 @@ body {
   grid-template-rows: repeat(2, max-content);
   justify-items: center;
   align-items: center;
+}
+
+.body-fixed-header {
+  padding-top: var(--primary-header-height);
 }
 
 .bg-full {
@@ -239,11 +244,56 @@ a:where(:hover, :focus, :focus-visible) {
   align-items: center;
 }
 
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 .nav-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: var(--size-400);
+}
+
+/** Content - Sliders **/
+.slider {
+  position: relative;
+}
+
+.slides {
+  list-style: none;
+  display: flex;
+}
+
+.slides {
+  background-color: var(--clr-gray-1000);
+  overflow-x: auto;
+}
+
+.slide {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  outline: thin solid red;
+}
+
+.slides > .slide:first-child {
+  margin-left: auto;
+}
+
+.slides > .slide:last-child {
+  margin-right: auto;
+}
+
+.slide-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
 }
 
 /** Content - End **/
