@@ -7,6 +7,9 @@ const dataSlideAttr = `data-slide`
 const dataActiveAttr = `data-active`
 
 const sliderEl = document.querySelector(`[data-element="slider"]`)
+const sliderContainerEl = sliderEl.querySelector(
+  `[data-element="slider-container"]`
+)
 const sliderSlidesEl = sliderEl.querySelector(`[data-element="slider-slides"]`)
 const sliderDotsEl = sliderEl.querySelector(`[data-element="slider-dots"]`)
 
@@ -66,17 +69,17 @@ function correctActiveSlide(activeSlide, slideLength) {
 }
 
 function renderDotsHtml(activeSlide, slideLength) {
-    let sliderDotsHtml = ``
-    for (let i = 0; i < slideLength; ++i) {
-      const active = i == activeSlide ? dataActiveAttr : ``
-    
-      sliderDotsHtml += `
+  let sliderDotsHtml = ``
+  for (let i = 0; i < slideLength; ++i) {
+    const active = i == activeSlide ? dataActiveAttr : ``
+
+    sliderDotsHtml += `
             <li class="slider-dot">
                 <button type="button" class="btn btn-slider-dot" data-slide="${i}" ${active}>
                     {i + 1}
                 </button>
             </li>
         `
-    }
-    return sliderDotsHtml
+  }
+  return sliderDotsHtml
 }

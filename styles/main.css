@@ -348,11 +348,11 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .slides {
-  --slides-translate-x: 0;
+  --slides-translate-x: 0px;
 
   list-style: none;
   display: grid;
-  translate: var(--slides-translate-x, 0) 0;
+  translate: var(--slides-translate-x, 0px) 0;
   transition: translate 0.5s ease-in-out;
 }
 
