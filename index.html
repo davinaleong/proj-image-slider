@@ -22,30 +22,45 @@
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/main.css" />
 
+    <script
+      defer
+      src="https://kit.fontawesome.com/6c0a4e7a8f.js"
+      crossorigin="anonymous"
+    ></script>
     <script defer type="module" src="./scripts/main.js"></script>
   </head>
-  <body id="top">
+  <body id="top" class="text-neutral-50 bg-neutral-900">
     <main>
-      <header class="main-header">
-        <h1 class="ff-secondary fw-600">Image Sliders with Various Options</h1>
+      <header class="main-header | py-400 bg-neutral-800">
+        <div class="container">
+          <h1 class="ff-secondary fs-600 fw-bold ta-center pb-300">
+            Image Sliders with Various Options
+          </h1>
 
-        <nav class="primary-nav">
-          <ul class="nav-list">
-            <li class="nav-list__item">
-              <a href="#top" class="btn btn-link">Top</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#" class="btn btn-link">Option 1</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#" class="btn btn-link">Option 2</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#" class="btn btn-link">Option 2</a>
-            </li>
-          </ul>
-        </nav>
+          <nav class="primary-nav">
+            <ul class="nav-list" role="list">
+              <li class="nav-list__item">
+                <a href="#top" class="btn btn-link">Top</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#" class="btn btn-link">Option 1</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#" class="btn btn-link">Option 2</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#" class="btn btn-link">Option 2</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
+
+      <footer class="main-footer | bg-neutral-800">
+        <div class="container | py-400">
+          <p class="ta-center fs-300">Image Slider &copy; Davina Leong, 2022</p>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

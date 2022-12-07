@@ -42,7 +42,7 @@
   --clr-gray-1000: hsl(0, 0%, 0%);
 
   --ff-primary: "Nunito", Arial, sans-serif;
-  --ff-secondary: "Montserrrat", Verdana, sans-serif;
+  --ff-secondary: "Montserrat", Verdana, sans-serif;
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-secondary);
 
@@ -217,15 +217,17 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .btn-link {
-  --btn-clr: var(--clr-neutral-400);
+  --btn-clr: var(--clr-primary-500);
   --btn-bg-clr: transparent;
   --btn-border-clr: transparent;
 
-  --btn-hover-clr: var(--clr-neutral-900);
+  --btn-hover-clr: var(--clr-primary-300);
   --btn-hover-bg-clr: transparent;
   --btn-hover-border-clr: transparent;
 
-  font-weight: var(--fw-bold);
+  --btn-padding: 0;
+
+  text-decoration: none;
 }
 
 /** Content - Layout **/
@@ -237,93 +239,11 @@ a:where(:hover, :focus, :focus-visible) {
   align-items: center;
 }
 
-.decoration {
-  --decoration-width: 100%;
-
-  max-width: var(--decoration-width);
-  width: var(--decoration-width);
-  position: fixed;
-  z-index: -1;
-}
-
-.decoration__top {
-  --decoration-width: 150%;
-
-  top: -60vw;
-  left: -100vw;
-}
-
-.decoration__bottom {
-  --decoration-width: 150%;
-
-  bottom: -70vw;
-  right: -90vw;
-}
-
-@media (min-width: 48em) {
-  .decoration__top {
-    --decoration-width: 50%;
-
-    top: -25vw;
-    left: -10vw;
-  }
-
-  .decoration__bottom {
-    --decoration-width: 50%;
-
-    bottom: -30vw;
-    right: -10vw;
-  }
-}
-
-.card {
-  --card-width: 330px;
-  --card-height: 375px;
-
-  max-width: var(--card-width);
-  height: var(--card-height);
-  width: 100%;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 1.2fr 1.5fr 0.5fr;
-}
-
-.card__decoration {
-  background-image: url(./../images/bg-pattern-card.svg);
-}
-
-.profile {
-  position: relative;
-  display: grid;
-  grid-template-rows: repeat(2, max-content);
-  place-items: center;
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: var(--size-400);
-}
-
-.profile__image {
-  position: relative;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid var(--clr-gray-50);
-  margin-top: -70px;
-}
-
-.profile__info__inner {
-  display: flex;
-  gap: var(--size-200);
-  align-items: center;
-  justify-content: center;
-}
-
-.card__footer {
-  border-top: thin solid var(--clr-gray-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: var(--size-600);
 }
 
 /** Content - End **/
@@ -460,6 +380,12 @@ a:where(:hover, :focus, :focus-visible) {
   font-family: var(--ff-body);
 }
 .ff-heading {
+  font-family: var(--ff-heading);
+}
+.ff-primary {
+  font-family: var(--ff-body);
+}
+.ff-secondary {
   font-family: var(--ff-heading);
 }
 
