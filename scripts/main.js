@@ -3,6 +3,7 @@ console.log(`main.js loaded`)
 // Variables
 const dataElementAttr = `data-element`
 const dataSlideAttr = `data-slide`
+const dataActiveAttr = `data-active`
 const sliderEl = document.querySelector(`[data-element="slider"]`)
 
 // Slider Elements
@@ -12,11 +13,11 @@ const sliderDotsEl = sliderEl.querySelector(`[data-element="slider-dots"]`)
 
 let sliderDotsHtml = ``
 sliderSlideLiEls.forEach((sliderSlideLiEl, index) => {
-  const activeClass = index == 0 ? `btn-slider-dot-active` : ``
+  const dataActiveAttr = index == 0 ? `data-active` : ``
 
   sliderDotsHtml += `
     <li class="slider-dot">
-        <button class="btn btn-slider-dot ${activeClass}" ${dataSlideAttr}="${index}">${
+        <button class="btn btn-slider-dot" ${dataActiveAttr} ${dataSlideAttr}="${index}">${
     index + 1
   }</button>
     </li>
@@ -28,7 +29,14 @@ sliderSlideLiEls.forEach((sliderSlideLiEl, index) => {
 const sliderDotButtonEls = sliderDotsEl.querySelectorAll(`li > button`)
 sliderDotButtonEls.forEach((sliderDotButtonEl) => {
   sliderDotButtonEl.addEventListener(`click`, (event) => {
-    const slide = event.target.getAttribute(dataSlideAttr)
+    const clickedEl = event.target
+
+    sliderDotButtonEls.forEach((sliderDotButtonEl) =>
+      sliderDotButtonEl.removeAttribute(dataActiveAttr)
+    )
+    clickedEl.setAttribute(dataActiveAttr, true)
+
+    const slide = clickedEl.getAttribute(dataSlideAttr)
     console.log(`Move to slide: ${slide}`)
   })
 })

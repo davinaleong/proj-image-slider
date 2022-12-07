@@ -315,7 +315,7 @@ a:where(:hover, :focus, :focus-visible) {
   border: 2px solid var(--btn-hover-border-clr);
 }
 
-.btn-slider-dot-active {
+.btn-slider-dot[data-active] {
   --btn-clr: var(--clr-neutral-50);
   --btn-bg-clr: var(--clr-primary-500);
   --btn-border-clr: var(--clr-primary-500);
@@ -334,7 +334,7 @@ a:where(:hover, :focus, :focus-visible) {
   border-radius: 50%;
 }
 
-.btn-slider-dot-active:hover {
+.btn-slider-dot[data-active]:hover {
   border: 2px solid var(--btn-hover-border-clr);
 }
 
