@@ -2,29 +2,20 @@ console.log(`main.js loaded`)
 
 // Variables
 const dataElementAttr = `data-element`
+const dataActiveSlideAttr = `data-active-slide`
 const dataSlideAttr = `data-slide`
 const dataActiveAttr = `data-active`
-const sliderEl = document.querySelector(`[data-element="slider"]`)
 
-// Slider Elements
+const sliderEl = document.querySelector(`[data-element="slider"]`)
 const sliderSlidesEl = sliderEl.querySelector(`[data-element="slider-slides"]`)
-const sliderSlideLiEls = sliderSlidesEl.querySelectorAll(`li`)
 const sliderDotsEl = sliderEl.querySelector(`[data-element="slider-dots"]`)
 
-let sliderDotsHtml = ``
-sliderSlideLiEls.forEach((sliderSlideLiEl, index) => {
-  const dataActiveAttr = index == 0 ? `data-active` : ``
+const slideLength = sliderSlidesEl.querySelectorAll(`li`).length
+let activeSlide = sliderEl.getAttribute(dataActiveSlideAttr)
+activeSlide = correctActiveSlide(activeSlide, slideLength)
+console.log(activeSlide)
 
-  sliderDotsHtml += `
-    <li class="slider-dot">
-        <button class="btn btn-slider-dot" ${dataActiveAttr} ${dataSlideAttr}="${index}">${
-    index + 1
-  }</button>
-    </li>
-    `
-
-  sliderDotsEl.innerHTML = sliderDotsHtml
-})
+sliderDotsEl.innerHTML = renderDotsHtml(activeSlide, slideLength)
 
 const sliderDotButtonEls = sliderDotsEl.querySelectorAll(`li > button`)
 sliderDotButtonEls.forEach((sliderDotButtonEl) => {
@@ -38,6 +29,8 @@ sliderDotButtonEls.forEach((sliderDotButtonEl) => {
 
     const slide = clickedEl.getAttribute(dataSlideAttr)
     console.log(`Move to slide: ${slide}`)
+
+    //TODO: Translate slides
   })
 })
 
@@ -58,3 +51,32 @@ sliderDotButtonEls.forEach((sliderDotButtonEl) => {
               </li>
 */
 //console.log(sliderDots)
+
+// Functions
+function correctActiveSlide(activeSlide, slideLength) {
+  if (activeSlide <= 0) {
+    activeSlide = 0
+  }
+
+  if (activeSlide >= slideLength - 1) {
+    activeSlide = slideLength - 1
+  }
+
+  return activeSlide
+}
+
+function renderDotsHtml(activeSlide, slideLength) {
+    let sliderDotsHtml = ``
+    for (let i = 0; i < slideLength; ++i) {
+      const active = i == activeSlide ? dataActiveAttr : ``
+    
+      sliderDotsHtml += `
+            <li class="slider-dot">
+                <button type="button" class="btn btn-slider-dot" data-slide="${i}" ${active}>
+                    {i + 1}
+                </button>
+            </li>
+        `
+    }
+    return sliderDotsHtml
+}
