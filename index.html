@@ -2,12 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+
+    <title>Image Slider with Options</title>
+
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <script defer type="module" src="./scripts/main.js"></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+  <body id="top">
+    <main>
+      <header class="main-header">
+        <h1 class="ff-secondary fw-600">Image Sliders with Various Options</h1>
+
+        <nav class="primary-nav">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="#top" class="btn btn-link">Top</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="btn btn-link">Option 1</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="btn btn-link">Option 2</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="btn btn-link">Option 2</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </main>
   </body>
 </html>
