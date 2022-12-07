@@ -7,16 +7,17 @@ const dataSlideAttr = `data-slide`
 const dataActiveAttr = `data-active`
 
 const sliderEl = document.querySelector(`[data-element="slider"]`)
-const sliderContainerEl = sliderEl.querySelector(
+const sliderContainerWidth = sliderEl.querySelector(
   `[data-element="slider-container"]`
-)
+).clientWidth
 const sliderSlidesEl = sliderEl.querySelector(`[data-element="slider-slides"]`)
 const sliderDotsEl = sliderEl.querySelector(`[data-element="slider-dots"]`)
 
 const slideLength = sliderSlidesEl.querySelectorAll(`li`).length
 let activeSlide = sliderEl.getAttribute(dataActiveSlideAttr)
 activeSlide = correctActiveSlide(activeSlide, slideLength)
-console.log(activeSlide)
+
+console.log(sliderContainerWidth, activeSlide)
 
 sliderDotsEl.innerHTML = renderDotsHtml(activeSlide, slideLength)
 
