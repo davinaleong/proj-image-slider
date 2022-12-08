@@ -77,6 +77,7 @@
   --transition: all 0.3s ease-in-out;
 
   --primary-header-height: 6.625em;
+  --primary-footer-height: 3.313em;
   --max-content-width: 50em;
 }
 /** Root - End **/
@@ -236,7 +237,7 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Content - Layout **/
-.main-grid {
+.primary-grid {
   min-height: calc(100vh - 4em);
   width: 100%;
   display: grid;
@@ -244,7 +245,7 @@ a:where(:hover, :focus, :focus-visible) {
   align-items: center;
 }
 
-.main-header {
+.primary-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -258,6 +259,12 @@ a:where(:hover, :focus, :focus-visible) {
   align-items: center;
   justify-content: center;
   gap: var(--size-400);
+}
+
+.primary-content {
+  min-height: calc(
+    100vh - var(--primary-header-height) - var(--primary-footer-height)
+  );
 }
 
 /** Content - Sliders **/
@@ -368,7 +375,6 @@ a:where(:hover, :focus, :focus-visible) {
 .slide {
   display: grid;
   place-items: center;
-  outline: thin solid red;
 }
 
 .slides > .slide:first-child {

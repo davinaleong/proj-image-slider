@@ -10,6 +10,12 @@ const sliderEl = document.querySelector(`[data-element="slider"]`)
 const sliderContainerWidth = sliderEl.querySelector(
   `[data-element="slider-container"]`
 ).clientWidth
+const sliderNavigationLeft = sliderEl.querySelector(
+  `[data-element="slider-navigation-left"]`
+)
+const sliderNavigationRight = sliderEl.querySelector(
+  `[data-element="slider-navigation-right"]`
+)
 const sliderSlidesEl = sliderEl.querySelector(`[data-element="slider-slides"]`)
 const sliderDotsEl = sliderEl.querySelector(`[data-element="slider-dots"]`)
 
@@ -31,30 +37,27 @@ sliderDotButtonEls.forEach((sliderDotButtonEl) => {
     )
     clickedEl.setAttribute(dataActiveAttr, true)
 
-    const slide = clickedEl.getAttribute(dataSlideAttr)
-    console.log(`Move to slide: ${slide}`)
-
-    //TODO: Translate slides
+    const activeSlide = clickedEl.getAttribute(dataSlideAttr)
+    sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
+    translateSlides(activeSlide)
   })
 })
 
-/*
-<li class="slider-dot">
-                <button class="btn btn-slider-dot btn-slider-dot-active">
-                  1
-                </button>
-              </li>
-              <li class="slider-dot">
-                <button class="btn btn-slider-dot">2</button>
-              </li>
-              <li class="slider-dot">
-                <button class="btn btn-slider-dot">3</button>
-              </li>
-              <li class="slider-dot">
-                <button class="btn btn-slider-dot">4</button>
-              </li>
-*/
-//console.log(sliderDots)
+sliderNavigationLeft.addEventListener(`click`, function (event) {
+  const activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) - 1
+  correctActiveSlide(activeSlide)
+
+  sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
+  translateSlides(activeSlide)
+})
+
+sliderNavigationRight.addEventListener(`click`, function (event) {
+  const activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) + 1
+  correctActiveSlide(activeSlide)
+
+  sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
+  translateSlides(activeSlide)
+})
 
 // Functions
 function correctActiveSlide(activeSlide, slideLength) {
@@ -83,4 +86,11 @@ function renderDotsHtml(activeSlide, slideLength) {
         `
   }
   return sliderDotsHtml
+}
+
+function translateSlides(activeSlide) {
+  const translateX = activeSlide * sliderContainerWidth * -1
+  sliderEl
+    .querySelector(`[data-element="slider-slides"]`)
+    .setAttribute(`style`, `--slides-translate-x: ${translateX}px`)
 }
