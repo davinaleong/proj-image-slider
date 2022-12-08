@@ -464,16 +464,15 @@ a:where(:hover, :focus, :focus-visible) {
 
 /** Content - Alternate Navigation Position **/
 .slider.slider-alt-navigation-position {
-  padding-inline: calc(var(--slider-btn-slider-size) + var(--slider-btn-arrows-offset));
+  padding-inline: var(--size-800);
 }
 
-/* .slider.slider-alt-navigation-position .btn-slider-prev {
-  left: calc((var(--slider-btn-slider-size) + var(--slider-btn-arrows-offset)) * -1);
+.slider.slider-alt-navigation-position .slider-dots {
+  position: static;
+  left: auto;
+  bottom: auto;
+  translate: none;
 }
-
-.slider.slider-alt-navigation-position .btn-slider-next {
-  right: calc((var(--slider-btn-slider-size) + var(--slider-btn-arrows-offset)) * -1);
-} */
 
 /** Content - End **/
 
