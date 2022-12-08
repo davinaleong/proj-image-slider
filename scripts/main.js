@@ -5,12 +5,19 @@ const dataElementAttr = `data-element`
 const dataActiveSlideAttr = `data-active-slide`
 const dataSlideAttr = `data-slide`
 const dataActiveAttr = `data-active`
+const dataVerticalAttr = `data-vertical`
 
 const sliderEls = document.querySelectorAll(`[data-element="slider"]`)
 sliderEls.forEach((sliderEl) => {
-  const sliderContainerWidth = sliderEl.querySelector(
+  const vertical = (sliderEl.getAttribute(dataVerticalAttr) && sliderEl.getAttribute(dataVerticalAttr) === `true`)
+
+  const sliderContainerEl = sliderEl.querySelector(
     `[data-element="slider-container"]`
-  ).clientWidth
+  )
+  const sliderContainerWidth = sliderContainerEl.clientWidth
+  const sliderContainerHeight = sliderContainerEl.clientHeight
+  console.log(sliderContainerWidth, sliderContainerHeight)
+
   const sliderNavigationPrev = sliderEl.querySelector(
     `[data-element="slider-navigation-prev"]`
   )
@@ -40,7 +47,7 @@ sliderEls.forEach((sliderEl) => {
 
       const activeSlide = clickedEl.getAttribute(dataSlideAttr)
       sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
-      translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
+      translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth, sliderContainerHeight, vertical)
     })
   })
 
@@ -49,7 +56,7 @@ sliderEls.forEach((sliderEl) => {
     activeSlide = correctActiveSlide(activeSlide, slideLength)
 
     sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
-    translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
+    translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth, sliderContainerHeight, vertical)
 
     setActiveDot(sliderDotButtonEls, activeSlide)
   })
@@ -59,7 +66,7 @@ sliderEls.forEach((sliderEl) => {
     activeSlide = correctActiveSlide(activeSlide, slideLength)
 
     sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
-    translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
+    translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth, sliderContainerHeight, vertical)
 
     setActiveDot(sliderDotButtonEls, activeSlide)
   })
@@ -105,7 +112,19 @@ function renderDotsHtml(activeSlide, slideLength) {
   return sliderDotsHtml
 }
 
-function translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth) {
-  const translateX = activeSlide * sliderContainerWidth * -1
-  sliderSlidesEl.setAttribute(`style`, `--slides-translate-x: ${translateX}px`)
+function translateSlides(
+  sliderSlidesEl,
+  activeSlide,
+  containerWidth,
+  containerHeight,
+  vertical = false
+) {
+  const translateX = activeSlide * containerWidth * -1
+  const translateY = activeSlide * containerHeight * -1
+
+  const translate = vertical
+    ? `--slides-translate: 0px ${translateY}px`
+    : `--slides-translate: ${translateX}px 0px`
+
+  sliderSlidesEl.setAttribute(`style`, translate)
 }

@@ -389,21 +389,25 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .slider-container {
-  overflow-x: hidden;
+  aspect-ratio: 16/9;
+  overflow: hidden;
   background-color: hsla(0, 0%, 0%, 0.5);
 }
 
 .slides {
-  --slides-translate-x: 0px;
+  --slides-translate: 0px 0px;
+  /* --slides-translate-x: 0px;
+  --slides-translate-y: 0px; */
 
   list-style: none;
   display: grid;
-  translate: var(--slides-translate-x, 0px) 0;
+  translate: var(--slides-translate, 0px);
   transition: translate 0.5s ease-in-out;
 }
 
 .slides:not(:has(:nth-child(3))) {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: auto;
 }
 
 .slides:has(:nth-child(3)) {
@@ -432,8 +436,10 @@ a:where(:hover, :focus, :focus-visible) {
 
 .slider-dots {
   position: absolute;
-  left: 50%;
+  top: auto;
   bottom: 0;
+  left: 50%;
+  right: auto;
   translate: -50% 0;
   padding: var(--size-200);
   list-style: none;
@@ -500,6 +506,44 @@ a:where(:hover, :focus, :focus-visible) {
 /** Content - With Text & Overlay **/
 .slider.slider-overlay .slide-content {
   background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+/** Content - Vertical Orientation **/
+.slider[data-vertical="true"] .btn-slider {
+  translate: -50% 0;
+}
+
+.slider[data-vertical="true"] .btn-slider-prev {
+  top: var(--slider-btn-arrows-offset);
+  bottom: auto;
+  left: 50%;
+  right: auto;
+}
+
+.slider[data-vertical="true"] .btn-slider-next {
+  top: auto;
+  bottom: var(--slider-btn-arrows-offset);
+  left: 50%;
+  right: auto;
+}
+
+.slider[data-vertical="true"] .slider-dots {
+  flex-direction: column;
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  translate: 0 -50%;
+}
+
+.slider[data-vertical="true"] .slides:not(:has(:nth-child(3))) {
+  grid-template-columns: auto;
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.slider[data-vertical="true"] .slides:has(:nth-child(3)) {
+  grid-auto-flow: row;
+  grid-auto-columns: 100%;
 }
 
 /** Content - End **/
