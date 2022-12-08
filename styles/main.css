@@ -480,6 +480,20 @@ a:where(:hover, :focus, :focus-visible) {
   object-fit: cover;
 }
 
+/** Content - With Text **/
+.slider.slider-with-text .slide {
+  position: relative;
+}
+
+.slide-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  gap: var(--size-200);
+}
+
 /** Content - End **/
 
 /** Utility **/
