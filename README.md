@@ -1,4 +1,4 @@
-# Image Slider
+# Davina Leong's Image Sliders
 
 Here is my solution to an image slider. This is not a CSS-only solution. I decided to go with a JavaScript solution as it's simpler to implement.
 

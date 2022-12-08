@@ -103,10 +103,6 @@ body {
   align-items: center;
 }
 
-.body-fixed-header {
-  padding-top: var(--primary-header-height);
-}
-
 .bg-full {
   background-repeat: no-repeat;
   background-size: cover;
@@ -236,6 +232,30 @@ a:where(:hover, :focus, :focus-visible) {
   text-decoration: none;
 }
 
+.btn-icon {
+  --btn-clr: var(--clr-neutral-50);
+  --btn-bg-clr: var(--clr-primary-500);
+  --btn-border-clr: var(--clr-primary-500);
+
+  --btn-hover-clr: var(--clr-neutral-50);
+  --btn-hover-bg-clr: var(--clr-primary-300);
+  --btn-hover-border-clr: var(--clr-primary-300);
+
+  --btn-padding: var(--size-200);
+  --btn-slider-size: 2.5rem;
+
+  width: var(--btn-slider-size);
+  height: var(--btn-slider-size);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.btn-fixed {
+  position: fixed;
+  right: var(--size-400);
+  bottom: var(--size-600);
+}
+
 /** Content - Layout **/
 .primary-grid {
   min-height: calc(100vh - 4em);
@@ -245,13 +265,13 @@ a:where(:hover, :focus, :focus-visible) {
   align-items: center;
 }
 
-.primary-header {
+/* .primary-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
-}
+} */
 
 .nav-list {
   display: flex;
@@ -285,17 +305,22 @@ a:where(:hover, :focus, :focus-visible) {
   border-radius: 50%;
   text-decoration: none;
   position: absolute;
-  top: 50%;
   translate: 0 -50%;
   z-index: 1;
   box-shadow: 0 0.3rem 0.5rem 0 hsla(0, 0%, 0%, 0.5);
 }
 
-.btn-slider-left {
+.btn-slider-prev {
+  top: 50%;
+  bottom: auto;
   left: var(--size-200);
+  right: auto;
 }
 
-.btn-slider-right {
+.btn-slider-next {
+  top: 50%;
+  bottom: auto;
+  left: auto;
   right: var(--size-200);
 }
 
@@ -392,10 +417,16 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .slider-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
+  padding: var(--size-200);
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: var(--size-400);
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Image Slider with Options</title>
+    <title>Davina Leong's Image Sliders</title>
 
     <link
       rel="shortcut icon"
@@ -31,17 +31,19 @@
   </head>
   <body id="top" class="body-fixed-header text-neutral-50 bg-neutral-900">
     <main>
+      <a href="#top" class="btn btn-icon btn-fixed">
+        <i class="fa-solid fa-chevron-up"></i>
+        <span class="visually-hidden">Back to Top</span>
+      </a>
+
       <header class="primary-header | py-400 bg-neutral-800">
         <div class="container">
           <h1 class="ff-secondary fs-600 fw-bold ta-center mb-300">
-            Image Sliders with Various Options
+            Davina Leong's Image Sliders
           </h1>
 
           <nav class="primary-nav">
             <ul class="nav-list" role="list">
-              <li class="nav-list__item">
-                <a href="#top" class="btn btn-link">Top</a>
-              </li>
               <li class="nav-list__item">
                 <a href="#basic-slider" class="btn btn-link">Basic Slider</a>
               </li>
@@ -69,7 +71,9 @@
                 >
               </li>
               <li class="nav-list__item">
-                <a href="#vertical-slider" class="btn btn-link">Vertical Slider</a>
+                <a href="#vertical-slider" class="btn btn-link"
+                  >Vertical Slider</a
+                >
               </li>
             </ul>
           </nav>
@@ -85,97 +89,14 @@
             <div class="slider" data-element="slider" data-active-slide="0">
               <div class="slider-navigation" data-element="slider-navigation">
                 <button
-                  class="btn btn-slider btn-slider-left"
-                  data-element="slider-navigation-left"
+                  class="btn btn-slider btn-slider-prev"
+                  data-element="slider-navigation-prev"
                 >
                   <i class="fa-solid fa-chevron-left"></i>
                 </button>
                 <button
-                  class="btn btn-slider btn-slider-right"
-                  data-element="slider-navigation-right"
-                >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-              </div>
-
-              <div class="slider-container" data-element="slider-container">
-                <ul
-                  class="slides"
-                  data-element="slider-slides"
-                  style="--slides-translate-x: 0px"
-                >
-                  <li class="slide">
-                    <img
-                      src="./images/image 01.jpg"
-                      alt=""
-                      class="slide-image"
-                    />
-                  </li>
-                  <li class="slide">
-                    <img
-                      src="./images/image 02.jpg"
-                      alt=""
-                      class="slide-image"
-                    />
-                  </li>
-                  <li class="slide">
-                    <img
-                      src="./images/image 03.jpg"
-                      alt=""
-                      class="slide-image"
-                    />
-                  </li>
-                  <li class="slide">
-                    <img
-                      src="./images/image 04.jpg"
-                      alt=""
-                      class="slide-image"
-                    />
-                  </li>
-                  <li class="slide">
-                    <img
-                      src="./images/image 05.jpg"
-                      alt=""
-                      class="slide-image"
-                    />
-                  </li>
-                </ul>
-              </div>
-
-              <ul class="slider-dots | mt-200" data-element="slider-dots">
-                <li class="slider-dot">
-                  <button class="btn btn-slider-dot" data-active>1</button>
-                </li>
-                <li class="slider-dot">
-                  <button class="btn btn-slider-dot">2</button>
-                </li>
-                <li class="slider-dot">
-                  <button class="btn btn-slider-dot">3</button>
-                </li>
-                <li class="slider-dot">
-                  <button class="btn btn-slider-dot">4</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="basic-slider">
-          <div class="container py-400">
-            <h2 class="ff-secondary fs-600 fw-bold">Basic Slider</h2>
-            <p class="mb-400">A basic slider with navigation.</p>
-
-            <div class="slider" data-element="slider" data-active-slide="0">
-              <div class="slider-navigation" data-element="slider-navigation">
-                <button
-                  class="btn btn-slider btn-slider-left"
-                  data-element="slider-navigation-left"
-                >
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button
-                  class="btn btn-slider btn-slider-right"
-                  data-element="slider-navigation-right"
+                  class="btn btn-slider btn-slider-next"
+                  data-element="slider-navigation-next"
                 >
                   <i class="fa-solid fa-chevron-right"></i>
                 </button>
@@ -246,7 +167,9 @@
 
       <footer class="primary-footer | bg-neutral-800">
         <div class="container | py-400">
-          <p class="ta-center fs-300">Image Slider &copy; Davina Leong, 2022</p>
+          <p class="ta-center fs-300">
+            Davina Leong's Image Sliders &copy; Davina Leong, 2022
+          </p>
         </div>
       </footer>
     </main>
