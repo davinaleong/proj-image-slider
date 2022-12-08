@@ -16,7 +16,6 @@ sliderEls.forEach((sliderEl) => {
   )
   const sliderContainerWidth = sliderContainerEl.clientWidth
   const sliderContainerHeight = sliderContainerEl.clientHeight
-  console.log(sliderContainerWidth, sliderContainerHeight)
 
   const sliderNavigationPrev = sliderEl.querySelector(
     `[data-element="slider-navigation-prev"]`
