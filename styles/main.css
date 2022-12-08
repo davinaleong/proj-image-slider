@@ -474,6 +474,12 @@ a:where(:hover, :focus, :focus-visible) {
   translate: none;
 }
 
+/** Content - Expanded Images **/
+.slider.slider-expanded-images .slide-image {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
 /** Content - End **/
 
 /** Utility **/

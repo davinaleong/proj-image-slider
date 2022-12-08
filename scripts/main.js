@@ -45,8 +45,8 @@ sliderEls.forEach((sliderEl) => {
   })
 
   sliderNavigationPrev.addEventListener(`click`, function (event) {
-    const activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) - 1
-    correctActiveSlide(activeSlide)
+    let activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) - 1
+    activeSlide = correctActiveSlide(activeSlide, slideLength)
 
     sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
     translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
@@ -55,8 +55,8 @@ sliderEls.forEach((sliderEl) => {
   })
 
   sliderNavigationNext.addEventListener(`click`, function (event) {
-    const activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) + 1
-    correctActiveSlide(activeSlide)
+    let activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) + 1
+    activeSlide = correctActiveSlide(activeSlide, slideLength)
 
     sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
     translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
@@ -71,8 +71,8 @@ function correctActiveSlide(activeSlide, slideLength) {
     activeSlide = 0
   }
 
-  if (activeSlide >= slideLength - 1) {
-    activeSlide = slideLength - 1
+  if (activeSlide >= Number(slideLength) - 1) {
+    activeSlide = Number(slideLength) - 1
   }
 
   return activeSlide
