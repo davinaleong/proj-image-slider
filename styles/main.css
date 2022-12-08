@@ -256,6 +256,14 @@ a:where(:hover, :focus, :focus-visible) {
   bottom: var(--size-600);
 }
 
+.primary-content > .section:nth-child(odd) {
+  background-color: transparent;
+}
+
+.primary-content > .section:nth-child(even) {
+  background-color: var(--clr-neutral-800);
+}
+
 /** Content - Layout **/
 .primary-grid {
   min-height: calc(100vh - 4em);
@@ -299,7 +307,7 @@ a:where(:hover, :focus, :focus-visible) {
   --btn-hover-border-clr: var(--clr-primary-300);
 
   --btn-padding: var(--size-200);
-  --btn-slider-size: 2.5rem;
+  --btn-slider-size: var(--slider-btn-slider-size);
 
   width: var(--btn-slider-size);
   height: var(--btn-slider-size);
@@ -314,7 +322,7 @@ a:where(:hover, :focus, :focus-visible) {
 .btn-slider-prev {
   top: 50%;
   bottom: auto;
-  left: var(--size-200);
+  left: var(--slider-btn-arrows-offset);
   right: auto;
 }
 
@@ -322,7 +330,7 @@ a:where(:hover, :focus, :focus-visible) {
   top: 50%;
   bottom: auto;
   left: auto;
-  right: var(--size-200);
+  right: var(--slider-btn-arrows-offset);
 }
 
 .btn-slider-dot {
@@ -335,7 +343,7 @@ a:where(:hover, :focus, :focus-visible) {
   --btn-hover-border-clr: var(--clr-primary-300);
 
   --btn-padding: 0;
-  --btn-slider-dot-size: 1rem;
+  --btn-slider-dot-size: var(--slider-btn-slider-dot-size);
 
   font-size: 0px;
   width: var(--btn-slider-dot-size);
@@ -358,7 +366,7 @@ a:where(:hover, :focus, :focus-visible) {
   --btn-hover-border-clr: var(--clr-primary-300);
 
   --btn-padding: 0;
-  --btn-slider-dot-size: 1rem;
+  --btn-slider-dot-size: var(--slider-btn-slider-dot-size);
 
   font-size: 0px;
   width: var(--btn-slider-dot-size);
@@ -372,6 +380,10 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .slider {
+  --slider-btn-arrows-offset: var(--size-200);
+  --slider-btn-slider-size: 2.5rem;
+  --slider-btn-slider-dot-size: 1rem;
+
   position: relative;
 }
 
@@ -432,7 +444,7 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Content - Numeric Navigation **/
-.slider[data-option="numeric-navigation"] .btn-slider-dot {
+.slider.slider-numeric-navigation .btn-slider-dot {
   --btn-bg-clr: hsla(0, 0%, 0%, 0.5);
 
   --btn-hover-bg-clr: hsla(0, 0%, 0%, 0.5);
@@ -442,13 +454,26 @@ a:where(:hover, :focus, :focus-visible) {
   font-size: var(--size-300);
 }
 
-.slider[data-option="numeric-navigation"] .btn-slider-dot[data-active] {
+.slider.slider-numeric-navigation .btn-slider-dot[data-active] {
   --btn-bg-clr: var(--clr-primary-500);
 
   --btn-hover-bg-clr: var(--clr-primary-300);
 
   font-size: var(--size-300);
 }
+
+/** Content - Alternate Navigation Position **/
+.slider.slider-alt-navigation-position {
+  padding-inline: calc(var(--slider-btn-slider-size) + var(--slider-btn-arrows-offset));
+}
+
+/* .slider.slider-alt-navigation-position .btn-slider-prev {
+  left: calc((var(--slider-btn-slider-size) + var(--slider-btn-arrows-offset)) * -1);
+}
+
+.slider.slider-alt-navigation-position .btn-slider-next {
+  right: calc((var(--slider-btn-slider-size) + var(--slider-btn-arrows-offset)) * -1);
+} */
 
 /** Content - End **/
 

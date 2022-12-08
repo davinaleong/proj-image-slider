@@ -5,7 +5,6 @@ const dataElementAttr = `data-element`
 const dataActiveSlideAttr = `data-active-slide`
 const dataSlideAttr = `data-slide`
 const dataActiveAttr = `data-active`
-const dataOption = `data-option`
 
 const sliderEls = document.querySelectorAll(`[data-element="slider"]`)
 sliderEls.forEach((sliderEl) => {
@@ -51,6 +50,8 @@ sliderEls.forEach((sliderEl) => {
 
     sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
     translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
+
+    setActiveDot(sliderDotButtonEls, activeSlide)
   })
 
   sliderNavigationNext.addEventListener(`click`, function (event) {
@@ -59,6 +60,8 @@ sliderEls.forEach((sliderEl) => {
 
     sliderEl.setAttribute(dataActiveSlideAttr, activeSlide)
     translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
+
+    setActiveDot(sliderDotButtonEls, activeSlide)
   })
 })
 
@@ -73,6 +76,17 @@ function correctActiveSlide(activeSlide, slideLength) {
   }
 
   return activeSlide
+}
+
+function setActiveDot(sliderDotButtonEls, activeSlide) {
+  sliderDotButtonEls.forEach((sliderDotButtonEl) => {
+    const slide = sliderDotButtonEl.getAttribute(dataSlideAttr)
+    sliderDotButtonEl.removeAttribute(dataActiveAttr)
+
+    if (activeSlide == slide) {
+      sliderDotButtonEl.setAttribute(dataActiveAttr, true)
+    }
+  })
 }
 
 function renderDotsHtml(activeSlide, slideLength) {
