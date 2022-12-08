@@ -288,6 +288,7 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Content - Sliders **/
+/** Content - Basic Slider **/
 .btn-slider {
   --btn-clr: var(--clr-neutral-50);
   --btn-bg-clr: var(--clr-primary-500);
@@ -428,6 +429,25 @@ a:where(:hover, :focus, :focus-visible) {
   justify-content: center;
   flex-wrap: wrap;
   gap: var(--size-400);
+}
+
+/** Content - Numeric Navigation **/
+.slider[data-option="numeric-navigation"] .btn-slider-dot {
+  --btn-bg-clr: hsla(0, 0%, 0%, 0.5);
+
+  --btn-hover-bg-clr: hsla(0, 0%, 0%, 0.5);
+
+  --btn-slider-dot-size: 2rem;
+
+  font-size: var(--size-300);
+}
+
+.slider[data-option="numeric-navigation"] .btn-slider-dot[data-active] {
+  --btn-bg-clr: var(--clr-primary-500);
+
+  --btn-hover-bg-clr: var(--clr-primary-300);
+
+  font-size: var(--size-300);
 }
 
 /** Content - End **/

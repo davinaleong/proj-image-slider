@@ -5,17 +5,18 @@ const dataElementAttr = `data-element`
 const dataActiveSlideAttr = `data-active-slide`
 const dataSlideAttr = `data-slide`
 const dataActiveAttr = `data-active`
+const dataOption = `data-option`
 
 const sliderEls = document.querySelectorAll(`[data-element="slider"]`)
 sliderEls.forEach((sliderEl) => {
   const sliderContainerWidth = sliderEl.querySelector(
     `[data-element="slider-container"]`
   ).clientWidth
-  const sliderNavigationLeft = sliderEl.querySelector(
-    `[data-element="slider-navigation-left"]`
+  const sliderNavigationPrev = sliderEl.querySelector(
+    `[data-element="slider-navigation-prev"]`
   )
-  const sliderNavigationRight = sliderEl.querySelector(
-    `[data-element="slider-navigation-right"]`
+  const sliderNavigationNext = sliderEl.querySelector(
+    `[data-element="slider-navigation-next"]`
   )
   const sliderSlidesEl = sliderEl.querySelector(
     `[data-element="slider-slides"]`
@@ -44,7 +45,7 @@ sliderEls.forEach((sliderEl) => {
     })
   })
 
-  sliderNavigationLeft.addEventListener(`click`, function (event) {
+  sliderNavigationPrev.addEventListener(`click`, function (event) {
     const activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) - 1
     correctActiveSlide(activeSlide)
 
@@ -52,7 +53,7 @@ sliderEls.forEach((sliderEl) => {
     translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
   })
 
-  sliderNavigationRight.addEventListener(`click`, function (event) {
+  sliderNavigationNext.addEventListener(`click`, function (event) {
     const activeSlide = Number(sliderEl.getAttribute(dataActiveSlideAttr)) + 1
     correctActiveSlide(activeSlide)
 
@@ -60,7 +61,6 @@ sliderEls.forEach((sliderEl) => {
     translateSlides(sliderSlidesEl, activeSlide, sliderContainerWidth)
   })
 })
-// const sliderEl = document.querySelector(`[data-element="slider"]`)
 
 // Functions
 function correctActiveSlide(activeSlide, slideLength) {
@@ -83,7 +83,7 @@ function renderDotsHtml(activeSlide, slideLength) {
     sliderDotsHtml += `
             <li class="slider-dot">
                 <button type="button" class="btn btn-slider-dot" data-slide="${i}" ${active}>
-                    {i + 1}
+                    ${i + 1}
                 </button>
             </li>
         `

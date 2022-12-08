@@ -81,12 +81,87 @@
       </header>
 
       <div class="primary-content">
-        <section id="basic-slider">
+        <section id="basic-slider" class="mb-600">
           <div class="container py-400">
             <h2 class="ff-secondary fs-600 fw-bold">Basic Slider</h2>
             <p class="mb-400">A basic slider with navigation.</p>
 
             <div class="slider" data-element="slider" data-active-slide="0">
+              <div class="slider-navigation" data-element="slider-navigation">
+                <button
+                  class="btn btn-slider btn-slider-prev"
+                  data-element="slider-navigation-prev"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  class="btn btn-slider btn-slider-next"
+                  data-element="slider-navigation-next"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <div class="slider-container" data-element="slider-container">
+                <ul
+                  class="slides"
+                  data-element="slider-slides"
+                  style="--slides-translate-x: 0px"
+                >
+                  <li class="slide">
+                    <img
+                      src="./images/image 01.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 02.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 03.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 04.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 05.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="slider-dots | mt-200" data-element="slider-dots"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="numeric-navigation" class="mb-600">
+          <div class="container py-400">
+            <h2 class="ff-secondary fs-600 fw-bold">Numeric Navigation</h2>
+            <p class="mb-400">A basic slider with numbered pagination.</p>
+
+            <div
+              class="slider"
+              data-element="slider"
+              data-active-slide="0"
+              data-option="numeric-navigation"
+            >
               <div class="slider-navigation" data-element="slider-navigation">
                 <button
                   class="btn btn-slider btn-slider-prev"
