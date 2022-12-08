@@ -72,7 +72,14 @@
               </li>
               <li class="nav-list__item">
                 <a href="#vertical-slider" class="btn btn-link"
-                  >Vertical Slider</a
+                  >Vertical Orientation</a
+                >
+              </li>
+              <li class="nav-list__item">
+                <a
+                  href="#vertical-slider-alt-navigation-position"
+                  class="btn btn-link"
+                  >Vertical Orientation Alt Navigation Position</a
                 >
               </li>
             </ul>
@@ -621,6 +628,86 @@
 
             <div
               class="slider"
+              data-element="slider"
+              data-active-slide="0"
+              data-vertical="true"
+            >
+              <div class="slider-navigation" data-element="slider-navigation">
+                <button
+                  class="btn btn-slider btn-slider-prev"
+                  data-element="slider-navigation-prev"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  class="btn btn-slider btn-slider-next"
+                  data-element="slider-navigation-next"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+
+              <div class="slider-container" data-element="slider-container">
+                <ul
+                  class="slides"
+                  data-element="slider-slides"
+                  style="--slides-translate-x: 0px"
+                >
+                  <li class="slide">
+                    <img
+                      src="./images/image 01.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 02.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 03.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 04.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                  <li class="slide">
+                    <img
+                      src="./images/image 05.jpg"
+                      alt=""
+                      class="slide-image"
+                    />
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="slider-dots | mt-200" data-element="slider-dots"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="vertical-slider-alt-navigation-position" class="section">
+          <div class="container py-600">
+            <h2 class="ff-secondary fs-600 fw-bold">
+              Vertical Orientation with Alt Navigation Position
+            </h2>
+            <p class="mb-400">
+              A basic slider with vertical orientation and navigation positioned
+              outside of the slider.
+            </p>
+
+            <div
+              class="slider slider-alt-navigation-position"
               data-element="slider"
               data-active-slide="0"
               data-vertical="true"

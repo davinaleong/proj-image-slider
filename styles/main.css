@@ -471,7 +471,7 @@ a:where(:hover, :focus, :focus-visible) {
 
 /** Content - Alternate Navigation Position **/
 .slider.slider-alt-navigation-position {
-  padding-inline: var(--size-800);
+  padding: 0 var(--size-800);
 }
 
 .slider.slider-alt-navigation-position .slider-dots {
@@ -544,6 +544,49 @@ a:where(:hover, :focus, :focus-visible) {
 .slider[data-vertical="true"] .slides:has(:nth-child(3)) {
   grid-auto-flow: row;
   grid-auto-columns: 100%;
+}
+
+/** Content - Vertical Orientation with Alt Navigation Position **/
+.slider[data-vertical="true"].slider-alt-navigation-position {
+  padding: var(--size-800) var(--size-600) var(--size-800) 0
+}
+
+.slider[data-vertical="true"].slider-alt-navigation-position .btn-slider-prev {
+  top: var(--slider-btn-arrows-offset);
+  bottom: auto;
+  left: calc(50% - var(--size-600));
+  right: auto;
+}
+
+.slider[data-vertical="true"].slider-alt-navigation-position .btn-slider-next {
+  top: auto;
+  bottom: var(--slider-btn-arrows-offset);
+  left: calc(50% - var(--size-600));
+  right: auto;
+}
+
+.slider[data-vertical="true"].slider-alt-navigation-position .slider-dots {
+  position: absolute;
+}
+
+@media screen and (min-width: 33.76em) {
+  .slider[data-vertical="true"].slider-alt-navigation-position {
+    padding: var(--size-800) var(--size-700) var(--size-800) 0
+  }
+  
+  .slider[data-vertical="true"].slider-alt-navigation-position .btn-slider-prev {
+    top: var(--slider-btn-arrows-offset);
+    bottom: auto;
+    left: calc(50% - var(--size-700));
+    right: auto;
+  }
+  
+  .slider[data-vertical="true"].slider-alt-navigation-position .btn-slider-next {
+    top: auto;
+    bottom: var(--slider-btn-arrows-offset);
+    left: calc(50% - var(--size-700));
+    right: auto;
+  }
 }
 
 /** Content - End **/
