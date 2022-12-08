@@ -315,7 +315,7 @@ a:where(:hover, :focus, :focus-visible) {
   text-decoration: none;
   position: absolute;
   translate: 0 -50%;
-  z-index: 1;
+  z-index: 5;
   box-shadow: 0 0.3rem 0.5rem 0 hsla(0, 0%, 0%, 0.5);
 }
 
@@ -385,6 +385,7 @@ a:where(:hover, :focus, :focus-visible) {
   --slider-btn-slider-dot-size: 1rem;
 
   position: relative;
+  isolation: isolate;
 }
 
 .slider-container {
@@ -492,6 +493,13 @@ a:where(:hover, :focus, :focus-visible) {
   flex-direction: column;
   place-content: center;
   gap: var(--size-200);
+  z-index: 1;
+  padding: var(--size-400);
+}
+
+/** Content - With Text & Overlay **/
+.slider.slider-overlay .slide-content {
+  background-color: hsla(0, 0%, 0%, 0.5);
 }
 
 /** Content - End **/
