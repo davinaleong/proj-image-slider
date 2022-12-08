@@ -20,6 +20,8 @@ To switch sliders you just need to add the respective class to your slider, with
 | Vertical Slider                                   | `data-vertical="true"`                                      |
 | Vertical Orientation with Alt Navigation Position | `slider-alt-navigation-position` and `data-vertical="true"` |
 
+Refresh the page if the slides do not scroll properly.
+
 ## Getting Started
 
 1. Fork this repo
